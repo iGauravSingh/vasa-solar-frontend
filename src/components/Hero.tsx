@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <>
     <div className=" w-screen h-screen realtive font-Montserrat">
-    <video src="/solarvid.mp4" className='w-full h-full object-cover brightness-[60%] transition duration-500' autoPlay muted loop></video>
+    <video src="/solarvid2.mp4" className='w-full h-full object-cover brightness-[60%] transition duration-500' autoPlay muted loop></video>
     <div className=" absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
 
     <>
