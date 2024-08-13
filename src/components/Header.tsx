@@ -22,6 +22,10 @@ const Header = () => {
         </ul>
         </div>
 
+        <div className=" lg:hidden text-slate-100 cursor-pointer">
+          <IoMdMenu size={30} />
+        </div>
+
         {/* button white  */}
         <button className=' hidden lg:block w-[150px] h-[45px] rounded-2xl text-blue-950 font-semibold text-lg bg-slate-50 px-2 py-1'>Qoute</button>
     </div>
