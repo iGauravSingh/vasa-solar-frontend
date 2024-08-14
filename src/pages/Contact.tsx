@@ -79,11 +79,12 @@ const Contact = () => {
             </p>
             <div className="mb-4">
               <h4 className="text-lg font-bold text-gray-800">Address</h4>
-              <p className="text-gray-600">123 Solar St, Green City, CA 90210</p>
+              <p className="text-gray-600">88/16 Post Office building, near</p>
+              <p className="text-gray-600">Lalkuan crossing Lucknow 226001</p>
             </div>
             <div className="mb-4">
               <h4 className="text-lg font-bold text-gray-800">Phone</h4>
-              <p className="text-gray-600">+1 (123) 456-7890</p>
+              <p className="text-gray-600">+91 9455004100</p>
             </div>
             <div className="mb-4">
               <h4 className="text-lg font-bold text-gray-800">Email</h4>

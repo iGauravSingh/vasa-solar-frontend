@@ -29,9 +29,9 @@ const Footer = () => {
         <div className=" md:hidden mt-4">
             <p className=" text-lg font-semibold">Address</p>
            <div>
-           <p>address line 1/.....</p>
-            <p>address line 2/.....</p>
-            <p>Phone number .....</p>
+           <p>88/16 Post Office building, near</p>
+            <p>Lalkuan crossing Lucknow 226001</p>
+            <p>+91 9455004100</p>
            </div>
         </div>
         </div>
@@ -51,9 +51,9 @@ const Footer = () => {
         <div className=" hidden md:block pr-6">
             <p className=" text-lg font-semibold">Address</p>
            <div>
-           <p>address line 1/.....</p>
-            <p>address line 2/.....</p>
-            <p>Phone number .....</p>
+           <p>88/16 Post Office building, near</p>
+            <p>Lalkuan crossing Lucknow 226001</p>
+            <p>+91 9455004100</p>
            </div>
         </div>
 

@@ -1,4 +1,9 @@
+
+
 const Hero = () => {
+
+  
+
   const text = "Welcome To VASA";
   const descp =
     "VASA provides reliable solar solutions to save energy costs and create a sustainable future.";
@@ -60,6 +65,8 @@ const Hero = () => {
           ></path>
         </svg>
       </div>
+
+      
     </>
   );
 };
