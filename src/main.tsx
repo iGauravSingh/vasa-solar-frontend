@@ -15,7 +15,8 @@ import Contact from "./pages/Contact.tsx";
 import Projects from "./pages/Projects.tsx";
 import Services from "./pages/Services.tsx";
 import Error404 from "./pages/Error404.tsx";
-import Dashboard from "./pages/Dashboard.tsx";
+import Dashboard from "./pages/Admin/Dashboard.tsx";
+import Signin from "./pages/Signin.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -25,6 +26,8 @@ const router = createBrowserRouter(
       <Route path="/contact" element={<Contact />} />
       <Route path="/projects" element={<Projects />} />
       <Route path="/services" element={<Services />} />
+
+      <Route path="/signin" element={<Signin />} />
 
       {/* // */}
       <Route path="/admin" element={<Dashboard />} />

@@ -10,7 +10,7 @@ const Contact = () => {
 
     <div className="bg-gray-100 py-12 px-6">
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-8">
+        <h2 className="text-4xl font-extrabold text-center text-[#1d3571] mb-8">
           Contact Us
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
