@@ -1,17 +1,39 @@
 import { useState } from "react";
+import { v4 as uuidv4 } from 'uuid'
+import useGallery from "../../hooks/useGallery";
 
 const ImageUploadSection = () => {
-  const [galleryImage, setGalleryImage] = useState(null);
+
+  const { addGalleryImage } = useGallery()
+
+  const [galleryImage, setGalleryImage] = useState<File | null>(null);
 
   // Handlers for Gallery Image upload form
-  const handleGalleryImageChange = (e: any) => {
-    setGalleryImage(e.target.files[0]);
+  const handleGalleryImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files && e.target.files.length > 0) {
+      setGalleryImage(e.target.files[0]); 
+    }
   };
 
-  const handleGallerySubmit = (e: any) => {
+  const handleGallerySubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Gallery image uploaded:", galleryImage);
-    // Implement the logic to handle gallery image upload
+    if(!galleryImage){
+      alert("Please select Image to upload")
+    } else {
+        // console.log(galleryImage.name)
+        const newName = galleryImage.name + uuidv4()
+        // console.log(newName)
+        const formData = new FormData()
+        formData.append('file',galleryImage)
+        formData.append('imagename',newName)
+        // console.log(formData)
+        const repp = await addGalleryImage(formData)
+        setGalleryImage(null)
+        if(repp?.success){
+          alert("Image uploaded successfully")
+        }
+    }
   };
 
   return (

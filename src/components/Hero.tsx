@@ -45,9 +45,9 @@ const Hero = () => {
                 className="absolute -inset-1 bg-gradient-to-r from-red-600 to-violet-600 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200">
             </div>
             <div
-                className="relative px-7 py-6 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6">
+                className="relative px-5 py-3 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none  space-x-6">
                 <div className="space-y-2">
-                    <p className="text-slate-800 font-semibold text-center">Explore</p>
+                    <p className=" text-blue-950 font-semibold text-lg text-center">Explore</p>
                 </div>
             </div>
         </div>

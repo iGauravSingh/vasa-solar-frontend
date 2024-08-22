@@ -1,16 +1,32 @@
 import { useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import useAuth from "../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const Signin = () => {
+
+  const navigate = useNavigate()
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    
   
-    const handleSignIn = (e:any) => {
+
+    const { login } = useAuth()
+
+    const handleSignIn = async (e:any) => {
       e.preventDefault();
       // Add your sign-in logic here
       console.log('Email:', email);
       console.log('Password:', password);
+      const resp = await login({email,password})
+      if(resp?.user) {
+        navigate("/admin")
+      } else {
+        alert("invild email or password")
+      }
     };
   
     return (

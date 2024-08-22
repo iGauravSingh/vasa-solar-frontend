@@ -3,7 +3,7 @@ import { IoMdMenu } from "react-icons/io";
 import { useState } from "react";
 
 
-const Header = () => {
+const Header2 = () => {
 
   const [mobileMenuOpen,setMobileMenuOpen] = useState(false)
 
@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <>
-    <div className=' w-screen flex items-center justify-between bg-[#4698d2] px-8 font-Montserrat'>
+    <div className=' w-screen flex items-center justify-between  px-8 font-Montserrat absolute top-0 left-0 z-20'>
 
         {/* logo  */}
         <img className=" w-[200px] h-[105px]" src="./vasalogo2.png" alt="vasa logo" />
@@ -25,7 +25,7 @@ const Header = () => {
         {/* menu  */}
 
         <div className=" hidden lg:block">
-        <ul className=' flex items-center gap-6 text-slate-50 text-[14px] leading-3 font-sans tracking-wider'>
+        <ul className=' flex items-center gap-6 text-slate-100 text-[14px] leading-3 font-sans tracking-wider'>
             <li className=" cursor-pointer"><Link to='/'>Home</Link></li>
             <li className=" cursor-pointer"><Link to='/aboutus'>About Us</Link></li>
             <li className=" cursor-pointer"><Link to='/services'>Services</Link></li>
@@ -97,4 +97,4 @@ const Header = () => {
   )
 }
 
-export default Header
+export default Header2

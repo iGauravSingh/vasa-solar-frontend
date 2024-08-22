@@ -111,7 +111,7 @@ const TypesOfSolar = () => {
   return (
     <>
       <div className=" font-Roboto text-[#1d3571] bg-[#f6fbff]">
-        <h1 className=" text-4xl font-bold mb-16 text-center">
+        <h1 className=" text-3xl font-semibold mb-16 text-center">
           Our Product & Services
         </h1>
         {/* gif container  */}

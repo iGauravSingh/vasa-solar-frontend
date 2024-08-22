@@ -4,10 +4,36 @@ import { useState } from "react";
 import PostsSection from "./PostsSection";
 import ImageUploadSection from "./ImageUploadSection";
 import YoutubeVideoUploadSection from "./YoutubeVideoUploadSection";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
+import useAuth from "../../hooks/useAuth";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard = () => {
-// post, image, youtube
+  const navigate = useNavigate()
   const [selectedSection, setSelectedSection] = useState("post")
+
+  const user = useSelector((state: RootState) => state.user.value)
+
+
+  if(!user.user){
+    return (
+      <div className=" h-screen w-screen flex justify-center items-center">
+        <h1 className=" text-4xl font-bold">Invaild Access</h1>
+      </div>
+    )
+  }
+
+  const { logout } = useAuth()
+
+  // post, image, youtube
+  
+
+  const handleLogout = () => {
+    logout()
+    navigate("/")
+  }
+
 
   return (
     <>
@@ -29,7 +55,7 @@ const Dashboard = () => {
             <h1 className="text-3xl font-bold text-gray-800 mb-8">
               Admin Dashboard
             </h1>
-            <button className=" bg-blue-900 text-slate-100 px-4 py-2 rounded-lg">Logout</button>
+            <button onClick={handleLogout} className=" bg-blue-900 text-slate-100 px-4 py-2 rounded-lg">Logout</button>
           </div>
 
           {/* content  */}

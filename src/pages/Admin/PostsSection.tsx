@@ -1,7 +1,10 @@
 import { useState } from "react"
+import usePosts from "../../hooks/usePosts";
 
 
 const PostsSection = () => {
+
+  const { createPosts } = usePosts()
 
     // States for each form
    const [post, setPost] = useState({
@@ -22,10 +25,13 @@ const PostsSection = () => {
     setPost({ ...post, image: e.target.files[0] });
   };
 
-  const handlePostSubmit = (e:any) => {
+  const handlePostSubmit = async (e:any) => {
     e.preventDefault();
     console.log('Post submitted:', post);
-    // Implement the logic to handle post submission
+    const resp = await createPosts(post)
+    if(resp.message === "ok created"){
+      alert("Project created success fully.")
+    }
   };
 
   return (
