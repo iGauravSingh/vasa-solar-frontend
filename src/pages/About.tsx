@@ -6,9 +6,9 @@ const About = () => {
     <>
       <Header />
 
-      <div className="bg-gray-100 py-12 px-6 font-Roboto">
+      <div className="bg-gray-100 py-12 px-6 font-Montserrat">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-extrabold text-center text-gray-900 mb-6">
+          <h2 className="text-4xl font-extrabold text-center text-[#1d3571] mb-6">
             About Us
           </h2>
           <div>

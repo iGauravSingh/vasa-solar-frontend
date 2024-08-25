@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import useGallery from "../hooks/useGallery";
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
 
 interface Image {
   imageUrl: string;
@@ -13,7 +15,7 @@ interface Image {
 const ImageGallery = () => {
 
   const { getAllGalleryImages } = useGallery()
-  const [imgesp, setimagep] = useState<Image[] | null>(null)
+  
   
   const [selectedImage, setSelectedImage] = useState<Image | null>(null);
   
@@ -21,9 +23,7 @@ const ImageGallery = () => {
   useEffect(() => {
     const getGallery = async () => {
       try {
-        const respo = await getAllGalleryImages()
-        console.log(respo)
-        setimagep(respo)
+        getAllGalleryImages()
       } catch (error) {
         alert("network error in fetching images")
       }
@@ -31,6 +31,22 @@ const ImageGallery = () => {
 
     getGallery()
   },[])
+
+  const gallery = useSelector((state:RootState) => state.gallery.value)
+
+
+  if(gallery.isLoading){
+    return (
+      <div>
+        <Header />
+        <div className="absolute inset-0 flex items-center justify-center z-10 ">
+          {/* Tailwind Loading Spinner */}
+          <div className="w-12 h-12 border-4 border-gray-200 border-t-4 border-t-blue-500 rounded-full animate-spin"></div>
+        </div>
+        <Footer />
+      </div>
+    )
+  }
 
   
 
@@ -47,12 +63,12 @@ const ImageGallery = () => {
   return (
     <>
       <Header />
-      <div className="container mx-auto mt-8 mb-8 px-4">
+      <div className="container mx-auto mt-8 mb-8 px-4 min-h-screen">
         <h2 className="text-center text-3xl font-semibold mb-8">
           Image Gallery
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-          {imgesp?.map((image, index) => (
+          {gallery.gallery?.map((image, index) => (
             <div
               key={index}
               className="relative cursor-pointer"
@@ -74,7 +90,7 @@ const ImageGallery = () => {
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 z-50">
             <div className="relative max-w-3xl mx-auto p-4 bg-white rounded-lg shadow-lg">
               <button
-                className="absolute top-2 right-2 text-gray-600 hover:text-gray-900"
+                className="absolute text-2xl top-2 right-4 text-red-600 hover:text-gray-900"
                 onClick={closeModal}
               >
                 &times;

@@ -1,13 +1,12 @@
 import { useEffect } from "react";
 import useGallery from "../../hooks/useGallery";
+import { useSelector } from "react-redux";
+import { RootState } from "../../app/store";
 
 
 const ListImages = () => {
 
-    const { getAllGalleryImages } = useGallery()
-    const handleDelete = (id: any) => {
-        console.log(id)
-    }
+    const { getAllGalleryImages, deleteGallerywithId } = useGallery()
 
     useEffect(()=> {
         const fetchImages = () => {
@@ -22,6 +21,13 @@ const ListImages = () => {
 
     // creates image slice and add functionality
 
+    const gallery = useSelector((state: RootState) => state.gallery.value)
+
+    const handleDelete = (id: any) => {
+        console.log(id)
+        deleteGallerywithId(id)
+    }
+
   return (
         <div className="container mx-auto mt-8 px-4">
           <h2 className="text-2xl font-semibold mb-4">Project List</h2>
@@ -35,10 +41,10 @@ const ListImages = () => {
                 </tr>
               </thead>
               <tbody>
-                {posts.posts?.map((project: any) => (
+                {gallery.gallery?.map((project: any) => (
                   <tr key={project.id} className="border-b">
                     <td className="py-3 px-4 text-gray-800">{project.id}</td>
-                    <td className="py-3 px-4 text-gray-800">{project.heading}</td>
+                    <td className="py-3 px-4 text-gray-800">{project.imageName}</td>
                     <td className="py-3 px-4 text-right">
                       <button
                         onClick={() => handleDelete(project.id)}

@@ -5,16 +5,16 @@ interface projectGridData {
 }
 
 const projectGridData = [
-  { id: 1, image: "/projectgrid/pj_1.jpg", text: "sample text" },
-  { id: 2, image: "/projectgrid/pj_2.jpg", text: "sample text" },
-  { id: 3, image: "/projectgrid/pj_3.jpg", text: "sample text" },
-  { id: 4, image: "/projectgrid/pj_4.jpg", text: "sample text" },
-  { id: 5, image: "/projectgrid/pj_5.jpg", text: "sample text" },
-  { id: 6, image: "/projectgrid/pj_6.jpg", text: "sample text" },
-  { id: 7, image: "/projectgrid/pj_7.jpg", text: "sample text" },
-  { id: 8, image: "/projectgrid/pj_8.jpg", text: "sample text" },
-  { id: 9, image: "/projectgrid/pj_9.jpg", text: "sample text" },
-  { id: 10, image: "/projectgrid/pj_10.jpg", text: "sample text" },
+  { id: 1, image: "/projectgrid/pro1.jpg", text: "Vasa Solar" },
+  { id: 2, image: "/projectgrid/pro2.jpg", text: "Vasa Solar" },
+  { id: 3, image: "/projectgrid/pro3.jpg", text: "Vasa Solar" },
+  { id: 4, image: "/projectgrid/pro4.jpg", text: "Vasa Solar" },
+  { id: 5, image: "/projectgrid/pro5.jpg", text: "Vasa Solar" },
+  { id: 6, image: "/projectgrid/pro6.jpg", text: "Vasa Solar" },
+  { id: 7, image: "/projectgrid/pro7.jpg", text: "Vasa Solar" },
+  { id: 8, image: "/projectgrid/pro8.jpg", text: "Vasa Solar" },
+  { id: 9, image: "/projectgrid/pro9.jpg", text: "Vasa Solar" },
+  { id: 10, image: "/projectgrid/pro10.jpg", text: "Vasa Solar" },
 ];
 
 const Projects = () => {

@@ -59,7 +59,7 @@ const useAuth = () => {
         }
       }
     
-      const changePassword = async(data: any) => {
+      const changePassword = async (data: any) => {
         try {
           const response = await axios.patch(`${urllocal}/auth/change-password`, data, {
             headers: {

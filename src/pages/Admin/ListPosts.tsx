@@ -5,10 +5,8 @@ import { RootState } from "../../app/store";
 
 const ListPosts = () => {
 
-    const { fetchPostsList } = usePosts()
-    const handleDelete = (id: any) => {
-        console.log(id)
-    }
+    const { fetchPostsList, deletePostswithId } = usePosts()
+    
 
     useEffect(()=> {
         const fetchProject = () => {
@@ -22,6 +20,11 @@ const ListPosts = () => {
     },[])
 
     const posts = useSelector((state: RootState) => state.posts.value)
+
+    const handleDelete = (id: any) => {
+      console.log(id)
+      deletePostswithId(id)
+  }
 
     return (
         <div className="container mx-auto mt-8 px-4">

@@ -20,7 +20,7 @@ const Header = () => {
     <div className=' w-screen flex items-center justify-between bg-[#4698d2] px-8 font-Montserrat'>
 
         {/* logo  */}
-        <img className=" w-[200px] h-[105px]" src="./vasalogo2.png" alt="vasa logo" />
+        <Link to='/'><img className=" w-[200px] h-[105px]" src="./vasalogo2.png" alt="vasa logo" /></Link>
 
         {/* menu  */}
 

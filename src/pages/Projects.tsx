@@ -37,12 +37,25 @@ const Projects = () => {
     return formattedDate
   }
 
+  if(posts.isLoading){
+    return (
+      <div>
+        <Header />
+        <div className="absolute inset-0 flex items-center justify-center z-10 bg-black bg-opacity-75">
+          {/* Tailwind Loading Spinner */}
+          <div className="w-12 h-12 border-4 border-gray-200 border-t-4 border-t-blue-500 rounded-full animate-spin"></div>
+        </div>
+        <Footer />
+      </div>
+    )
+  }
+
   return (
     <>
     <Header />
 
 
-    <div className="bg-gray-100 py-12 px-6">
+    <div className="bg-gray-100 py-12 px-6 min-h-screen">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl font-extrabold text-center text-[#1d3571] mb-8">
           Our Projects
