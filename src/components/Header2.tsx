@@ -32,6 +32,7 @@ const Header2 = () => {
             <li className=" cursor-pointer"><Link to='/projects'>Projects</Link></li>
             <li className=" cursor-pointer"><Link to='/gallery'>Gallery</Link></li>
             <li className=" cursor-pointer"><Link to='/contact'>Contact Us</Link></li>
+            <li className=" cursor-pointer"><Link to='/signin'>Login</Link></li>
 
         </ul>
         </div>

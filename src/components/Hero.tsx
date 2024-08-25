@@ -12,7 +12,7 @@ const Hero = () => {
     <>
       <div className=" w-screen h-screen realtive font-Montserrat">
         <video
-          src="/solarvid2.mp4"
+          src="/solarvid4.mp4"
           className="w-full h-full object-cover brightness-[60%] transition duration-500"
           autoPlay
           muted
@@ -65,6 +65,8 @@ const Hero = () => {
           ></path>
         </svg>
       </div>
+
+      
 
       
     </>

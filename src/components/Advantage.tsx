@@ -19,7 +19,7 @@ const Advantage = () => {
                     <PiSunHorizon color="#fcf05a" size={40} />
                     <div className=" space-y-2">
                         <h4 className=" text-xl font-semibold">Solar Panels Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, minus!</p>
+                        <p>Efficient solar panel installations for sustainable energy and cost savings.</p>
                     </div>
                     
                 </div>
@@ -28,7 +28,7 @@ const Advantage = () => {
                 <FaWater color="#fcf05a" size={40} />
                     <div className=" space-y-2">
                         <h4 className=" text-xl font-semibold">Solar Heater Service</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, minus!</p>
+                        <p>Expert solar heater installations for reliable warmth and energy efficiency.</p>
                     </div>
                 </div>
 
@@ -36,7 +36,7 @@ const Advantage = () => {
                 <GiElectric color="#fcf05a" size={40} />
                     <div className=" space-y-2">
                         <h4 className=" text-xl font-semibold">Extended Guarantee</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, minus!</p>
+                        <p>Offering extended guarantees for lasting peace of mind and protection</p>
                     </div>
                 </div>
             </div>

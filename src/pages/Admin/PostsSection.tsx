@@ -1,13 +1,22 @@
 import { useState } from "react"
+import { v4 as uuidv4 } from 'uuid'
 import usePosts from "../../hooks/usePosts";
 
+
+interface Post {
+  heading: string;
+    location: string;
+    completionDate: string;
+    description: string;
+    image: File | null,
+}
 
 const PostsSection = () => {
 
   const { createPosts } = usePosts()
 
     // States for each form
-   const [post, setPost] = useState({
+   const [post, setPost] = useState<Post>({
     heading: '',
     location: '',
     completionDate: '',
@@ -28,7 +37,22 @@ const PostsSection = () => {
   const handlePostSubmit = async (e:any) => {
     e.preventDefault();
     console.log('Post submitted:', post);
-    const resp = await createPosts(post)
+
+    
+
+    const formData = new FormData()
+    if (post.image) {
+      formData.append('file', post.image); // Only append if image is not null
+      const newName = post.image.name + uuidv4()
+      formData.append('imagename',newName)
+    }
+    
+    formData.append('heading',post.heading)
+    formData.append('location',post.location)
+    formData.append('completionDate',post.completionDate)
+    formData.append('description',post.description)
+    
+    const resp = await createPosts(formData)
     if(resp.message === "ok created"){
       alert("Project created success fully.")
     }

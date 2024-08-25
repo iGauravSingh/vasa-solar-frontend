@@ -8,6 +8,9 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../app/store";
 import useAuth from "../../hooks/useAuth";
 import { useNavigate } from "react-router-dom";
+import ListPosts from "./ListPosts";
+import ListImages from "./ListImages";
+import ChangePassword from "./ChangePassword";
 
 const Dashboard = () => {
   const navigate = useNavigate()
@@ -41,9 +44,11 @@ const Dashboard = () => {
         {/* side pannel left  */}
         <div className=" w-[20%] flex justify-center pt-8  bg-blue-500 text-slate-100">
           <ul className=" font-Montserrat font-semibold text-lg space-y-7">
-            <li onClick={() => setSelectedSection("post")} className={`${selectedSection === 'post' ? 'border-b-4 border-blue-800' : ''} cursor-pointer ease-in`}>Projects Posts</li>
+            <li onClick={() => setSelectedSection("post")} className={`${selectedSection === 'post' ? 'border-b-4 border-blue-800' : ''} cursor-pointer ease-in`}>Post Projects</li>
+            <li onClick={() => setSelectedSection("listp")} className={`${selectedSection === 'listp' ? 'border-b-4 border-blue-800' : ''} cursor-pointer ease-in`}>List Projects</li>
             <li onClick={() => setSelectedSection("image")} className={`${selectedSection === 'image' ? 'border-b-4 border-blue-800' : ''} cursor-pointer ease-in`}>Image Upload</li>
-            <li onClick={() => setSelectedSection("youtube")} className={`${selectedSection === 'youtube' ? 'border-b-4 border-blue-800' : ''} cursor-pointer ease-in`}>Youtube Video</li>
+            <li onClick={() => setSelectedSection("listi")} className={`${selectedSection === 'listi' ? 'border-b-4 border-blue-800' : ''} cursor-pointer ease-in`}>List Images</li>
+            <li onClick={() => setSelectedSection("change")} className={`${selectedSection === 'change' ? 'border-b-4 border-blue-800' : ''} cursor-pointer ease-in`}>Change Password</li>
           </ul>
         </div>
 
@@ -61,8 +66,10 @@ const Dashboard = () => {
           {/* content  */}
 
           {selectedSection === 'post' && <PostsSection />}
+          {selectedSection === 'listp' && <ListPosts />}
           {selectedSection === 'image' && <ImageUploadSection />}
-          {selectedSection === 'youtube' && <YoutubeVideoUploadSection />}
+          {selectedSection === 'listi' && <ListImages />}
+          {selectedSection === 'change' && <ChangePassword />}
 
         </div>
       </div>

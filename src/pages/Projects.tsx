@@ -1,4 +1,7 @@
 import { useSelector } from "react-redux";
+
+import { format } from 'date-fns';
+
 import Footer from "../components/Footer"
 import Header from "../components/Header"
 import { RootState } from "../app/store";
@@ -6,50 +9,6 @@ import usePosts from "../hooks/usePosts";
 import { useEffect } from "react";
 
 
-// const projects = [
-//   {
-//     title: 'Community Solar Farm',
-//     description: 'A large-scale solar farm providing clean energy to over 1,000 homes in the region.',
-//     image: 'https://via.placeholder.com/150', // Replace with actual image URL
-//     location: 'Springfield, IL',
-//     date: 'Completed: June 2023',
-//   },
-//   {
-//     title: 'Off-grid Solar Installation for Remote Village',
-//     description: 'A fully off-grid solar power system that supplies electricity to a remote village, ensuring energy independence.',
-//     image: 'https://via.placeholder.com/150', // Replace with actual image URL
-//     location: 'Lake Tahoe, CA',
-//     date: 'Completed: January 2023',
-//   },
-//   {
-//     title: 'Hybrid Solar System for Commercial Building',
-//     description: 'Installation of a hybrid solar power system for a commercial building, reducing energy costs and providing backup power.',
-//     image: 'https://via.placeholder.com/150', // Replace with actual image URL
-//     location: 'Austin, TX',
-//     date: 'Completed: March 2024',
-//   },
-//   {
-//     title: 'Residential Solar Water Heating',
-//     description: 'Installed solar water heaters in a residential community, significantly reducing energy consumption.',
-//     image: 'https://via.placeholder.com/150', // Replace with actual image URL
-//     location: 'Boulder, CO',
-//     date: 'Completed: August 2022',
-//   },
-//   {
-//     title: 'Flexible Solar Panels for Mobile Applications',
-//     description: 'Developed and installed flexible solar panels for mobile food trucks and RVs.',
-//     image: 'https://via.placeholder.com/150', // Replace with actual image URL
-//     location: 'San Diego, CA',
-//     date: 'Completed: October 2023',
-//   },
-//   {
-//     title: 'University Hybrid Solar Project',
-//     description: 'A hybrid solar power plant installed at a university campus, enhancing sustainability and energy efficiency.',
-//     image: 'https://via.placeholder.com/150', // Replace with actual image URL
-//     location: 'Boston, MA',
-//     date: 'Completed: December 2023',
-//   },
-// ];
 
 
 const Projects = () => {
@@ -61,7 +20,7 @@ const Projects = () => {
   useEffect(() => {
     const fetchProjectData = async () => {
       try {
-        const PostData = fetchPostsList()
+        fetchPostsList()
       } catch (error) {
         console.log("error fetching data")
       }
@@ -71,7 +30,12 @@ const Projects = () => {
   },[])
 
   const posts = useSelector((state: RootState) => state.posts.value)
-  console.log(posts.posts)
+  // console.log(posts.posts)
+
+  const toDate = (dateStr: string) => {
+    const formattedDate = format(new Date(dateStr), "MMMM do, yyyy");
+    return formattedDate
+  }
 
   return (
     <>
@@ -95,7 +59,7 @@ const Projects = () => {
                 {project.heading}
               </h3>
               <p className="text-sm text-gray-500 mb-4">{project.location}</p>
-              <p className="text-sm text-gray-500 mb-4">{project.completionDate}</p>
+              <p className="text-sm text-gray-500 mb-4">{toDate(project.completionDate)}</p>
               <p className="text-gray-600">{project.description}</p>
             </div>
           ))}

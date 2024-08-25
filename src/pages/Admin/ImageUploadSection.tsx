@@ -30,7 +30,7 @@ const ImageUploadSection = () => {
         // console.log(formData)
         const repp = await addGalleryImage(formData)
         setGalleryImage(null)
-        if(repp?.success){
+        if(repp?.message){
           alert("Image uploaded successfully")
         }
     }
