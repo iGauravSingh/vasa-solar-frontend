@@ -30,6 +30,7 @@ const Projects = () => {
         VASA has completed numerous solar panel installations that stand as a
         testament to our commitment to quality and innovation.
       </p>
+      <p>We are in the feild of solar and Solar services since 2010</p>
 
       {/* images grid  */}
 

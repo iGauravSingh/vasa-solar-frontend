@@ -5,7 +5,7 @@ import { setgallery, cleargallery, deletegallery } from '../features/gallerySlic
 
 const cookie = new Cookie();
 
-const urllocal = "http://localhost:8080"
+const urllocal = "https://api.vasaenterprises.in"
 
 
 

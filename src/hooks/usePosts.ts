@@ -5,7 +5,7 @@ import { setposts, clearposts, deletePosts } from "../features/postsSlice"
 
 const cookie = new Cookie();
 
-const urllocal = "http://localhost:8080"
+const urllocal = "https://api.vasaenterprises.in"
 
 const usePosts = () => {
     const sessionToken = cookie.get("session_token");

@@ -20,6 +20,14 @@ import Signin from "./pages/Signin.tsx";
 import ImageGallery from "./pages/ImageGallery.tsx";
 import { Provider } from "react-redux";
 import store from "./app/store.ts";
+// import ServiceDetailsPage from "./pages/ServiceDetailsPage.tsx";
+import OnGrid from "./pages/productDetails/OnGrid.tsx";
+import OffGrid from "./pages/productDetails/OffGrid.tsx";
+import Hybrid from "./pages/productDetails/Hybrid.tsx";
+import PureHybrid from "./pages/productDetails/PureHybrid.tsx";
+import SolarHeater from "./pages/productDetails/SolarHeater.tsx";
+import FlexibleSolar from "./pages/productDetails/FlexiblePannel.tsx";
+import ProjectDetails from "./pages/ProjectDetails.tsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(
@@ -30,7 +38,16 @@ const router = createBrowserRouter(
       <Route path="/projects" element={<Projects />} />
       <Route path="/services" element={<Services />} />
       <Route path="/gallery" element={<ImageGallery />} />
+      <Route path="/projectdetails" element={<ProjectDetails />} />
 
+      {/* service-details */}
+      <Route path="/ongrid" element={<OnGrid />} />
+      <Route path="/offgrid" element={<OffGrid />} />
+      <Route path="/hybrid" element={<Hybrid />} />
+      <Route path="/purehybrid" element={<PureHybrid />} />
+      <Route path="/solarheater" element={<SolarHeater />} />
+      <Route path="/flexiblesolar" element={<FlexibleSolar />} />
+      {/* / */}
       <Route path="/signin" element={<Signin />} />
 
       {/* // */}

@@ -20,7 +20,7 @@ const services = [
   {
     title: 'Pure Hybrid Solar Power Plant',
     description: 'Our pure hybrid systems ensure uninterrupted power supply by seamlessly switching between solar, battery, and grid power.',
-    image: '/hybrid.gif', 
+    image: '/purehybrid.gif', 
   },
   {
     title: 'Solar Water Heaters',

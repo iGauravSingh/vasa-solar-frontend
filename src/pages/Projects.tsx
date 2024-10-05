@@ -7,11 +7,15 @@ import Header from "../components/Header"
 import { RootState } from "../app/store";
 import usePosts from "../hooks/usePosts";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { Post } from "../features/postsSlice";
 
 
 
 
 const Projects = () => {
+
+  const navigate = useNavigate()
 
   const { fetchPostsList } = usePosts()
 
@@ -50,6 +54,10 @@ const Projects = () => {
     )
   }
 
+  const handleNavigate  = (project: Post) => {
+    navigate("/projectdetails", {state: project})
+  }
+
   return (
     <>
     <Header />
@@ -62,7 +70,7 @@ const Projects = () => {
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {posts.posts?.map((project) => (
-            <div key={project.id} className="bg-white p-6 rounded-lg shadow-lg">
+            <div onClick={()=>handleNavigate(project)} key={project.id} className="bg-white p-6 rounded-lg shadow-lg cursor-pointer">
               <img
                 src={project.imageUrl}
                 alt={project.heading}
