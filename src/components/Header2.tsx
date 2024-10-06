@@ -20,7 +20,7 @@ const Header2 = () => {
     <div className=' w-screen flex items-center justify-between  px-8 font-Montserrat absolute top-0 left-0 z-20'>
 
         {/* logo  */}
-        <Link to='/'><img className=" w-[200px] h-[105px]" src="./vasalogo2.png" alt="vasa logo" /></Link>
+        <Link className="flex items-center" to='/'><img className=" w-[140px] h-[105px] mt-2" src="./newvasalogo.png" alt="vasa logo" /><h1 className=" text-xl md:text-xl lg:text-2xl  text-white">VASA ENTERPRISES</h1></Link>
 
         {/* menu  */}
 

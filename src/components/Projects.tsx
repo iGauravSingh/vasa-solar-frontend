@@ -26,11 +26,11 @@ const Projects = () => {
       <p className="text-center mt-5 mb-2">
         Harnessing the Power of the Sun, One Project at a Time
       </p>
-      <p className="text-center mb-16">
+      <p className="text-center mb-2">
         VASA has completed numerous solar panel installations that stand as a
         testament to our commitment to quality and innovation.
       </p>
-      <p>We are in the feild of solar and Solar services since 2010</p>
+      <p className="text-center mb-16">We are in the feild of solar and Solar services since 2010</p>
 
       {/* images grid  */}
 
