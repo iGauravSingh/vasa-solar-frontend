@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Footer from "../components/Footer"
 import Header from "../components/Header"
-import axios from "axios";
+// import axios from "axios";
 
 
 const Contact = () => {
 
-  const urllocal = "http://localhost:8080";
+  // const urllocal = "http://localhost:8080";
 
   const [formData, setFormData] = useState({
     name: '',
@@ -25,8 +25,9 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(`${urllocal}/email/send-email`, formData);
-      console.log(response)
+      // const response = await axios.post(`${urllocal}/email/send-email`, formData);
+      // console.log(response)
+      console.log('email not provided by vasaenterprise client')
       setStatus('Message sent successfully!');
     } catch (error) {
       setStatus('Failed to send the message.');
