@@ -80,7 +80,7 @@ const Hero = () => {
             <div
                 className="relative px-5 py-3 bg-white ring-1 ring-gray-900/5 rounded-lg leading-none  space-x-6">
                 <div className="space-y-2">
-                    <p className=" text-blue-950 font-semibold text-lg text-center"><Link to="/services">Explore</Link> </p>
+                <Link to="/services"><p className=" text-blue-950 font-semibold text-lg text-center">Explore </p></Link>
                 </div>
             </div>
         </div>
