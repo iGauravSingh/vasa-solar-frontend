@@ -1,12 +1,12 @@
 import { useState } from "react";
 import Footer from "../components/Footer"
 import Header from "../components/Header"
-// import axios from "axios";
+import axios from "axios";
 
 
 const Contact = () => {
 
-  // const urllocal = "http://localhost:8080";
+  const urllocal = "https://api.vasaenterprises.in";
 
   const [formData, setFormData] = useState({
     name: '',
@@ -25,9 +25,8 @@ const Contact = () => {
     e.preventDefault();
 
     try {
-      // const response = await axios.post(`${urllocal}/email/send-email`, formData);
-      // console.log(response)
-      console.log('email not provided by vasaenterprise client')
+      const response = await axios.post(`${urllocal}/email/send-email`, formData);
+      console.log(response)
       setStatus('Message sent successfully!');
     } catch (error) {
       setStatus('Failed to send the message.');
@@ -59,6 +58,7 @@ const Contact = () => {
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Name"
+                required
               />
             </div>
             <div className="mb-4">
@@ -70,6 +70,7 @@ const Contact = () => {
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Email"
+                required
               />
             </div>
             <div className="mb-4">
@@ -81,6 +82,7 @@ const Contact = () => {
                 onChange={handleChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 placeholder="Your Phone Number"
+                required
               />
             </div>
             <div className="mb-4">
@@ -92,6 +94,7 @@ const Contact = () => {
                 className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                 rows={5}
                 placeholder="Your Message"
+                required
               ></textarea>
             </div>
             <button
